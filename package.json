@@ -1,0 +1,14 @@
+{
+  "name": "opencupid-web",
+  "version": "1.0.0",
+  "description": "Marketing website for OpenCupid",
+  "private": true,
+  "scripts": {
+    "build": "sass scss/style.scss css/style.css --style=compressed --load-path=node_modules",
+    "dev": "sass scss/style.scss css/style.css --watch --load-path=node_modules"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.83.0"
+  }
+}
