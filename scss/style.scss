@@ -1,0 +1,376 @@
+@import 'variables';
+@import 'bootstrap/scss/bootstrap';
+
+// ─── Google Fonts ──────────────────────────────────────────
+// Loaded via <link> in index.html:
+//   DM Serif Display (headings) + Source Sans 3 (body)
+
+// ─── Global ────────────────────────────────────────────────
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+// ─── Hero ──────────────────────────────────────────────────
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(ellipse at 50% 40%, $oc-cream 0%, $oc-sand 55%, $oc-caramel 100%);
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::before {
+    width: 36rem;
+    height: 28rem;
+    bottom: -8rem;
+    left: -10rem;
+    background: rgba($oc-terracotta, 0.06);
+    filter: blur(4rem);
+    animation: drift-slow 18s ease-in-out infinite alternate;
+  }
+
+  &::after {
+    width: 28rem;
+    height: 22rem;
+    top: -6rem;
+    right: -8rem;
+    background: rgba($oc-olive, 0.07);
+    filter: blur(3.5rem);
+    animation: drift-slow 22s ease-in-out infinite alternate-reverse;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tagline {
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  line-height: 1.12;
+  color: $oc-dark;
+
+  .accent {
+    color: $oc-brown;
+    font-style: italic;
+  }
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+  color: rgba($oc-dark, 0.75);
+  max-width: 38rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: $border-radius-pill;
+  background: rgba($oc-gold, 0.15);
+  color: $oc-brown;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.hero-decoration {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.06;
+  pointer-events: none;
+
+  &--1 {
+    width: 320px;
+    height: 320px;
+    border: 3px solid $oc-gold;
+    border-radius: 50%;
+    top: 8%;
+    right: 6%;
+  }
+
+  &--2 {
+    width: 160px;
+    height: 160px;
+    border: 2px solid $oc-terracotta;
+    border-radius: 50%;
+    bottom: 15%;
+    left: 4%;
+  }
+
+  &--3 {
+    width: 80px;
+    height: 80px;
+    background: $oc-olive;
+    border-radius: 50%;
+    top: 22%;
+    left: 12%;
+  }
+}
+
+// ─── Sections ──────────────────────────────────────────────
+
+.section {
+  padding: 5rem 0;
+
+  @media (min-width: 768px) {
+    padding: 7rem 0;
+  }
+}
+
+.section--tinted {
+  background: linear-gradient(
+    180deg,
+    rgba($oc-sand, 0.35) 0%,
+    rgba($oc-cream, 0) 100%
+  );
+}
+
+.section--warm {
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba($oc-sand, 0.5) 0%,
+    rgba($oc-cream, 0.2) 70%,
+    transparent 100%
+  );
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $oc-gold;
+  margin-bottom: 0.75rem;
+}
+
+.section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.section-lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba($oc-dark, 0.72);
+  max-width: 40rem;
+}
+
+// ─── Feature cards ─────────────────────────────────────────
+
+.feature-card {
+  padding: 2rem 1.5rem;
+  border-radius: $border-radius-lg;
+  background: rgba(white, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba($oc-gold, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow;
+  }
+}
+
+.feature-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba($oc-gold, 0.18);
+  color: $oc-brown;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.feature-title {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: $oc-dark;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba($oc-dark, 0.68);
+  margin-bottom: 0;
+}
+
+// ─── Privacy section ───────────────────────────────────────
+
+.trust-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.trust-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.trust-icon--reciprocal  { background: rgba($oc-olive, 0.12); color: $oc-olive; }
+.trust-icon--consent     { background: rgba($oc-gold, 0.18); color: $oc-gold; }
+.trust-icon--transparent { background: rgba($oc-terracotta, 0.1); color: $oc-terracotta; }
+.trust-icon--owned       { background: rgba($oc-brown, 0.12); color: $oc-brown; }
+
+.trust-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: $oc-dark;
+}
+
+.trust-text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba($oc-dark, 0.68);
+  margin-bottom: 0;
+}
+
+// ─── CTA section ───────────────────────────────────────────
+
+.cta {
+  position: relative;
+  background: radial-gradient(ellipse at 50% 60%, $oc-sand 0%, $oc-caramel 100%);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 24rem;
+    height: 20rem;
+    top: -6rem;
+    left: -8rem;
+    background: rgba($oc-terracotta, 0.05);
+    border-radius: 50%;
+    filter: blur(4rem);
+    pointer-events: none;
+  }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-cta {
+  font-size: 1.1rem;
+  padding: 0.75rem 2.5rem;
+  box-shadow: 0 4px 20px rgba($oc-brown, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba($oc-brown, 0.3);
+  }
+}
+
+// ─── Footer ────────────────────────────────────────────────
+
+.site-footer {
+  background: $oc-dark;
+  color: rgba(white, 0.6);
+  padding: 3rem 0;
+
+  a {
+    color: rgba(white, 0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.footer-brand {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 1.3rem;
+  color: rgba(white, 0.9);
+}
+
+.footer-divider {
+  border-color: rgba(white, 0.1);
+}
+
+// ─── Scroll animations ────────────────────────────────────
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@for $i from 1 through 8 {
+  .reveal-delay-#{$i} {
+    transition-delay: #{$i * 0.08}s;
+  }
+}
+
+// ─── Keyframes ─────────────────────────────────────────────
+
+@keyframes drift-slow {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(20px, -15px) scale(1.05); }
+}
+
+// ─── Misc utilities ────────────────────────────────────────
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.divider-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba($oc-gold, 0.5);
+  vertical-align: middle;
+  margin: 0 0.75rem;
+}

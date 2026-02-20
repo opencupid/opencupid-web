@@ -1,0 +1,46 @@
+// OpenCupid Marketing — Bootstrap 5 variable overrides
+// Color palette extracted from the app's LandingPage.vue
+
+// Core palette
+$oc-cream:       #faf4ea;
+$oc-sand:        #e0c99a;
+$oc-caramel:     #c9a97a;
+$oc-gold:        #b8904a;
+$oc-brown:       #5e4b2c;
+$oc-dark:        #2e2c26;
+$oc-terracotta:  #a43d30;
+$oc-olive:       #6b8e23;
+
+// Bootstrap overrides
+$body-bg:         $oc-cream;
+$body-color:      $oc-dark;
+
+$primary:         $oc-brown;
+$secondary:       $oc-caramel;
+$success:         #3a7d44;
+$info:            $oc-olive;
+$warning:         $oc-gold;
+$danger:          $oc-terracotta;
+$light:           $oc-cream;
+$dark:            $oc-dark;
+
+$font-family-sans-serif: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+$headings-color:       $oc-dark;
+$headings-font-weight: 700;
+
+$link-color:           $oc-brown;
+$link-hover-color:     darken($oc-brown, 12%);
+
+$border-radius:        0.75rem;
+$border-radius-lg:     1.25rem;
+$border-radius-pill:   50rem;
+
+$btn-border-radius:        $border-radius-pill;
+$btn-border-radius-lg:     $border-radius-pill;
+$btn-padding-x:            2rem;
+$btn-padding-x-lg:         3rem;
+$btn-font-weight:          600;
+
+$box-shadow:       0 4px 24px rgba($oc-brown, 0.12);
+$box-shadow-lg:    0 8px 40px rgba($oc-brown, 0.18);
