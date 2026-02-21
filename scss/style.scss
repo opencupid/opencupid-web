@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6,
 .hero-subtitle {
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   line-height: 1.65;
-  color: rgba($oc-dark, 0.75);
+  color: rgba($oc-dark, 0.8);
   max-width: 38rem;
 }
 
@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6,
   border-radius: $border-radius-pill;
   background: rgba($oc-gold, 0.15);
   color: $oc-brown;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -163,11 +163,11 @@ h1, h2, h3, h4, h5, h6,
 
 .section-label {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: $oc-gold;
+  color: $oc-brown;
   margin-bottom: 0.75rem;
 }
 
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6,
 .section-lead {
   font-size: 1.15rem;
   line-height: 1.7;
-  color: rgba($oc-dark, 0.72);
+  color: rgba($oc-dark, 0.78);
   max-width: 40rem;
 }
 
@@ -223,9 +223,9 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .feature-text {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
-  color: rgba($oc-dark, 0.68);
+  color: rgba($oc-dark, 0.75);
   margin-bottom: 0;
 }
 
@@ -261,9 +261,9 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .trust-text {
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.55;
-  color: rgba($oc-dark, 0.68);
+  color: rgba($oc-dark, 0.75);
   margin-bottom: 0;
 }
 
@@ -303,6 +303,64 @@ h1, h2, h3, h4, h5, h6,
     transform: translateY(-2px);
     box-shadow: 0 6px 28px rgba($oc-brown, 0.3);
   }
+}
+
+// ─── Hub showcase ──────────────────────────────────────
+
+.hub-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: $border-radius-lg;
+  background: rgba(white, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba($oc-gold, 0.15);
+  text-decoration: none;
+  color: $oc-dark;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+    color: $oc-dark;
+  }
+}
+
+.hub-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+}
+
+.hub-name {
+  font-weight: 700;
+  display: block;
+}
+
+.hub-desc {
+  font-size: 0.9rem;
+  color: rgba($oc-dark, 0.65);
+}
+
+// ─── Contribute section ────────────────────────────────
+
+.contribute-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $oc-brown;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.contribute-badge {
+  font-weight: 600;
+
+  &--olive { background: rgba($oc-olive, 0.15); color: #3d6612; }
+  &--gold  { background: rgba($oc-gold, 0.2);  color: #6a5225; }
+  &--terra { background: rgba($oc-terracotta, 0.12); color: #7a2d22; }
+  &--brown { background: rgba($oc-brown, 0.15); color: $oc-brown; }
 }
 
 // ─── Footer ────────────────────────────────────────────────
